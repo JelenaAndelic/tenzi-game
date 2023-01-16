@@ -31,7 +31,7 @@
 }
 
 body {
-    font-family: 'Karla', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--clr-body);
     color: var(--clr-heading);
     line-height: 1.5;
@@ -46,63 +46,63 @@ h4 {
     line-height: 1.25;
 }
 
-/* h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-}
-
-h4 {
-    font-size: 0.875rem;
-} */
-
 .section {
     background: var(--clr-dark);
     height: 100vh;
-    /* padding: 2rem; */
-    /* width: 40vw; */
     padding-inline: 1.5rem;
     padding-block: 2rem;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
 }
 
-  .game-section {
-      background: var(--clr-board);
-      width: 100%;
-      height: 100%;
-      /* height: 40rem; */
-      
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-  }
-
-  .tenzi-img {
+.game-section {
+    background: var(--clr-board);
     width: 100%;
-  }
+    height: 100%;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
- .instructions {
-        /* font-family: 'Inter', sans-serif; */
-        font-weight: 400;
-        margin-top: 0;
-        text-align: center;
-        padding-inline: 2rem;
-    }
+.tenzi-img {
+    width: 100%;
+}
+
+.instructions {
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+    padding-inline: 2rem;
+}
 
 .instructions span {
     font-weight: 700;
 }
+
+.ranking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ranking h2 {
+    margin-top: -5rem;
+    padding: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+ul span {
+    font-weight: 700;
+}
+
+.btn-start {
+    margin-top: 2rem;
+}
+
 
 .btn {
     height: 50px;
@@ -112,7 +112,7 @@ h4 {
     background-color: var(--clr-dark);
     color: white;
     font-size: 1.2rem;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Inter', sans-serif;
     cursor: pointer;
 }
 
@@ -125,7 +125,6 @@ h4 {
     display: grid;
     grid-template: auto auto / repeat(5, 1fr);
     gap: 0.5rem;
-    margin-top: -7rem;
  }
 
 .die-face {
@@ -139,77 +138,98 @@ h4 {
 }
 
 .score {
-    margin-top: -3rem;
     text-align: center;
 }
 
 @media (min-width: 992px ) {
+
 .section {
-        background: var(--clr-dark);
-        width: 40vw;
-        height: 85vh;
-        padding-inline: 2rem;
-        padding-block: 2.5rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    background: var(--clr-dark);
+    width: 40vw;
+    height: 85vh;
+    padding-inline: 2rem;
+    padding-block: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     }
 
-    .game-section {
-        background: var(--clr-board);
-        height: 100%;
-        border-radius: var(--radius);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .title {
-        font-size: 40px;
-    }
-
-    .instructions {
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .dice-container {
-        display: grid;
-        grid-template: auto auto / repeat(5, 1fr);
-        gap: 1.5rem;
-    }
-
-    .die-face {
-        height: 4.5rem;
-        width: 4.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    .btn {
-        height: 50px;
-        width: 150px;
-        border: none;
-        border-radius: 6px;
-        background-color: var(--clr-dark);
-        color: white;
-        font-size: 1.2rem;
-        font-family: 'Karla', sans-serif;
-        cursor: pointer;
-    }
+.game-section {
+    background: var(--clr-board);
+    height: 100%;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
+.title {
+    font-size: 40px;
+}
 
+.instructions {
+    font-weight: 400;
+    margin-top: -2rem;
+    text-align: center;
+}
+
+.ranking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ranking h2 {
+    margin-top: -5rem;
+    padding: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+ul span {
+    font-weight: 700;
+}
+
+.btn-start {
+    margin-top: 2rem;
+}
+
+.dice-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+.die-face {
+    height: 4.5rem;
+    width: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--clr-dark);
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+}
+}
 
 .btn:active {
-    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 5px 5px 10px -3px rgba(230, 230, 230, 0.5);
 }
 
 /* Styling each Die */
@@ -236,31 +256,26 @@ h4 {
 /* Setting Animation effect to the dice using css keyframe */
 
 @keyframes wobble {
-    from {
-        transform: translate3d(0, 0, 0);
+    
+    0% {
+            transform: translateX(0%);
     }
-
     15% {
-        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+            transform: translateX(-25%) rotate(-5deg);
     }
-
     30% {
-        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+            transform: translateX(20%) rotate(3deg);
     }
-
     45% {
-        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+            transform: translateX(-15%) rotate(-3deg);
     }
-
     60% {
-        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+            transform: translateX(10%) rotate(2deg);
     }
-
     75% {
-        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            transform: translateX(-5%) rotate(-1deg);
     }
-
-    to {
-        transform: translate3d(0, 0, 0);
+    100% {
+            transform: translateX(0%);
     }
 }

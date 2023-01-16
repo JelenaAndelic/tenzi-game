@@ -17,6 +17,7 @@ function App() {
   const [dice, setDice] = useState(allNewDice());
   const [countRoll, setCountRoll] = useState(0);
   const [tenzies, setTenzies] = useState(false);
+  const [score, setScore] = useState("");
 
   function generateNewDice() {
     return {
@@ -85,6 +86,20 @@ function App() {
 
   console.log(timer);
 
+  useEffect(() => {
+    if (timer < 10000) {
+      setScore("TENZI Master");
+    } else if (timer < 20000) {
+      setScore("Dice Dragon");
+    } else if (timer < 30000) {
+      setScore("Rockin' Roller");
+    } else if (timer < 40000) {
+      setScore("Rockin' Roller");
+    } else {
+      setScore("Cubie Newbie");
+    }
+  }, [timer]);
+
   function msToTime() {
     let seconds = Math.floor((timer / 1000) % 60);
     let minutes = Math.floor((timer / (1000 * 60)) % 60);
@@ -102,7 +117,6 @@ function App() {
       {tenzies && <Confetti />}
       <main className="section">
         <div className="game-section">
-          {/* <h1 className="title">Tenzie</h1> */}
           <img className="tenzi-img" src={image} alt="Tenzi game image" />
           {!tenzies && (
             <h4 className="instructions">
@@ -110,13 +124,33 @@ function App() {
               each die to freeze it at its current value between rolls.
             </h4>
           )}
-          <div>
-            {!start && (
-              <button className="btn" onClick={startGame}>
-                Start game
-              </button>
-            )}
-          </div>
+          {!start && (
+            <div className="ranking">
+              <h2>how fast are you?</h2>
+              <ul>
+                <li>
+                  Over 40 seconds: <span>Cubie Newbie</span>
+                </li>
+                <li>
+                  30 - 40 seconds: <span>Tumbler in Training</span>
+                </li>
+                <li>
+                  20 - 30 seconds: <span>Rockin' Roller</span>
+                </li>
+                <li>
+                  10 - 20 seconds: <span>Dice Dragon</span>
+                </li>
+                <li>
+                  Under 10 seconds: <span>TENZI Master!</span>
+                </li>
+              </ul>
+              <div className="btn-start">
+                <button className="btn" onClick={startGame}>
+                  Start game
+                </button>
+              </div>
+            </div>
+          )}
           {start && (
             <section>
               <div className="dice-container">
@@ -131,7 +165,7 @@ function App() {
                 ))}
               </div>
               <div className="btn-roll">
-                <button className="btn " onClick={rollDice}>
+                <button className="btn" onClick={rollDice}>
                   {tenzies ? "New Game" : "Roll"}
                 </button>
               </div>
@@ -142,6 +176,7 @@ function App() {
               <h3>Your score:</h3>
               <p>Number of rolls: {countRoll}</p>
               <p>Time to win: {msToTime()}</p>
+              <h3>You are: {score}</h3>
             </div>
           )}
         </div>
