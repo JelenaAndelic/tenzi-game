@@ -1,23 +1,22 @@
 /* Variables */
 
 :root {
-    --clr-body: #E5E5E5;
-    --clr-dark:#0B2434;
-    --clr-board:#F5F5F5;
-    --clr-dice-white: #FFFFFF;
-    --clr-dice-green: #59E391;
-    --clr-btn: #5035FF;
-    --clr-heading: #2B283A;
-    --clr-paragraph: #4A4E74;
+  --clr-body: #e5e5e5;
+  --clr-dark: #0b2434;
+  --clr-board: #f5f5f5;
+  --clr-dice-white: #ffffff;
+  --clr-dice-green: #59e391;
+  --clr-btn: #5035ff;
+  --clr-heading: #2b283a;
+  --clr-paragraph: #4a4e74;
 
-
-    --transition: all 0.3s linear;
-    --spacing: 0.1rem;
-    --radius: 0.5rem;
-    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    --max-width: 1170px;
-    --fixed-width: 620px;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
 }
 
 /* Global styles */
@@ -25,125 +24,123 @@
 *,
 ::after,
 ::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: var(--clr-body);
-    color: var(--clr-heading);
-    line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  background: var(--clr-body);
+  color: var(--clr-heading);
+  line-height: 1.5;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
-    line-height: 1.25;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
 }
 
 .section {
-    background: var(--clr-dark);
-    height: 100vh;
-    padding-inline: 1.5rem;
-    padding-block: 2rem;
+  background: var(--clr-dark);
+  height: 100vh;
+  padding-inline: 1.5rem;
+  padding-block: 2rem;
 }
 
 .game-section {
-    background: var(--clr-board);
-    width: 100%;
-    height: 100%;
-    border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  background: var(--clr-board);
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .tenzi-img {
-    width: 100%;
+  width: 100%;
 }
 
 .instructions {
-    font-weight: 400;
-    margin-top: 0;
-    text-align: center;
-    padding-inline: 2rem;
+  font-weight: 400;
+  margin-top: 0;
+  text-align: center;
+  padding-inline: 2rem;
 }
 
 .instructions span {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .ranking {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ranking h2 {
-    margin-top: -5rem;
-    padding: 1.5rem;
+  margin-top: -5rem;
+  padding: 1.5rem;
 }
 
 ul {
-    list-style-type: none;
-    text-align: center;
+  list-style-type: none;
+  text-align: center;
 }
 
 ul span {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .btn-start {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
-
 .btn {
-    height: 50px;
-    width: 150px;
-    border: none;
-    border-radius: 6px;
-    background-color: var(--clr-dark);
-    color: white;
-    font-size: 1.2rem;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--clr-dark);
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
 }
 
 .btn-roll {
-    margin-top: 3rem;
-    text-align: center;
+  margin-top: 3rem;
+  text-align: center;
 }
 
 .dice-container {
-    display: grid;
-    grid-template: auto auto / repeat(5, 1fr);
-    gap: 0.5rem;
- }
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 0.5rem;
+}
 
 .die-face {
-    height: 4rem;
-    width: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .score {
-    text-align: center;
+  text-align: center;
 }
 
-@media (min-width: 992px ) {
-
-.section {
+@media (min-width: 992px) {
+  .section {
     background: var(--clr-dark);
     width: 40vw;
     height: 85vh;
@@ -153,9 +150,9 @@ ul span {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    }
+  }
 
-.game-section {
+  .game-section {
     background: var(--clr-board);
     height: 100%;
     border-radius: var(--radius);
@@ -163,49 +160,49 @@ ul span {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
+  }
 
-.title {
+  .title {
     font-size: 40px;
-}
+  }
 
-.instructions {
+  .instructions {
     font-weight: 400;
     margin-top: -2rem;
     text-align: center;
-}
+  }
 
-.ranking {
+  .ranking {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 
-.ranking h2 {
+  .ranking h2 {
     margin-top: -5rem;
     padding: 1.5rem;
-}
+  }
 
-ul {
+  ul {
     list-style-type: none;
     text-align: center;
-}
+  }
 
-ul span {
+  ul span {
     font-weight: 700;
-}
+  }
 
-.btn-start {
+  .btn-start {
     margin-top: 2rem;
-}
+  }
 
-.dice-container {
+  .dice-container {
     display: grid;
     grid-template: auto auto / repeat(5, 1fr);
     gap: 1.5rem;
-}
+  }
 
-.die-face {
+  .die-face {
     height: 4.5rem;
     width: 4.5rem;
     display: flex;
@@ -213,9 +210,9 @@ ul span {
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
-}
+  }
 
-.btn {
+  .btn {
     height: 50px;
     width: 150px;
     border: none;
@@ -223,59 +220,62 @@ ul span {
     background-color: var(--clr-dark);
     color: white;
     font-size: 1.2rem;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     cursor: pointer;
-}
+  }
 }
 
 .btn:active {
-    box-shadow: inset 5px 5px 10px -3px rgba(230, 230, 230, 0.5);
+  box-shadow: inset 5px 5px 10px -3px rgba(230, 230, 230, 0.5);
 }
 
 /* Styling each Die */
 
 .Die {
-    width: 100%;
-    height: 100%;
-    color: #e05840;
+  width: 100%;
+  height: 100%;
+  color: #e05840;
 }
 
 .Die-held {
-    width: 100%;
-    height: 100%;
-    color: #21a155;
+  width: 100%;
+  height: 100%;
+  color: #21a155;
 }
 
 /* Applying Animation */
 
 .Die-shaking {
-    animation-name: wobble;
-    animation-duration: 1s;
+  animation-name: wobble;
+  animation-duration: 1s;
 }
 
 /* Setting Animation effect to the dice using css keyframe */
 
 @keyframes wobble {
-    
-    0% {
-            transform: translateX(0%);
-    }
-    15% {
-            transform: translateX(-25%) rotate(-5deg);
-    }
-    30% {
-            transform: translateX(20%) rotate(3deg);
-    }
-    45% {
-            transform: translateX(-15%) rotate(-3deg);
-    }
-    60% {
-            transform: translateX(10%) rotate(2deg);
-    }
-    75% {
-            transform: translateX(-5%) rotate(-1deg);
-    }
-    100% {
-            transform: translateX(0%);
-    }
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.broke {
+  color: red;
 }
