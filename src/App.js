@@ -24,7 +24,7 @@ function App() {
 
   const [startTime, setStartTime] = useState(0);
   const [endTime, setEndTime] = useState(0);
-  const [timer, setTimer] = useState(30000);
+  const [timer, setTimer] = useState(0);
   const [start, setStart] = useState(false);
   const [countRoll, setCountRoll] = useState(0);
   const [score, setScore] = useState("");
@@ -138,7 +138,9 @@ function App() {
       {getTheBestTime() === msToTime(timer) && tenzies && <Confetti />}
       <main className="section">
         <div className="game-section">
-          <h2>The Best Time Score: {getTheBestTime()}</h2>
+          {bestScore.length > 1 && (
+            <h2>The Best Time Score: {getTheBestTime()}</h2>
+          )}
           <img className="tenzi-img" src={image} alt="Tenzi game image" />
           {!tenzies && (
             <h4 className="instructions">
