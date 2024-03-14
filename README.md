@@ -28,7 +28,6 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [Live](https://complete-tenzi-game-react.netlify.app/)
-- GitHub repository: [Remote repository](https://github.com/JelenaAndelic/tenzi-game/tree/master)
 
 ## My process
 
