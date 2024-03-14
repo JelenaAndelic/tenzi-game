@@ -29,7 +29,6 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [Live](https://tenzi-game-storage-the-best-score.netlify.app/)
-- GitHub repository: [Remote repository](https://github.com/JelenaAndelic/tenzi-game/tree/improvement)
 
 ## My process
 
