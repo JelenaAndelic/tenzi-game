@@ -18,16 +18,17 @@
 Users should be able to:
 
 - View the optimal layout for each of the website's pages depending on their device's screen size
-- Play the game and see the score
+- Play the game and try the break the record
+- The best time sroce will be store in web browser storage
 
 ### Screenshot
 
 ![Screenshot](./src/images/screenshot1.png)
-![Screenshot](./src/images/screenshot2.png)
+![Screenshot](./src/images/screenshot2.PNG)
 
 ### Links
 
-- Live Site URL: [Live](https://complete-tenzi-game-react.netlify.app/)
+- Live Site URL: [Live](https://tenzi-game-storage-the-best-score.netlify.app/)
 
 ## My process
 

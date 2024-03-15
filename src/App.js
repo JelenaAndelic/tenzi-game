@@ -8,16 +8,28 @@ import image from "../src/images/Tenzi-Dice.png.webp";
 import "./index.css";
 library.add(fas);
 
+function getLocalStorageBestScore() {
+  let bestTime = localStorage.getItem("bestTime");
+  if (bestTime) {
+    return (bestTime = JSON.parse(localStorage.getItem("bestTime")));
+  } else {
+    return [];
+  }
+}
+
 function App() {
   const sides = ["one", "two", "three", "four", "five", "six"];
+  const [dice, setDice] = useState(allNewDice());
+  const [tenzies, setTenzies] = useState(false);
+
   const [startTime, setStartTime] = useState(0);
   const [endTime, setEndTime] = useState(0);
   const [timer, setTimer] = useState(0);
   const [start, setStart] = useState(false);
-  const [dice, setDice] = useState(allNewDice());
   const [countRoll, setCountRoll] = useState(0);
-  const [tenzies, setTenzies] = useState(false);
   const [score, setScore] = useState("");
+
+  const [bestScore, setBestScore] = useState(getLocalStorageBestScore);
 
   function generateNewDice() {
     return {
@@ -72,7 +84,6 @@ function App() {
   useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
     const firstHeld = dice.find((die) => die.isHeld);
-    console.log("First hold, ", firstHeld);
     const allSameValue = dice.every((die) => die.value === firstHeld?.value);
     if (allHeld && allSameValue) {
       setTenzies(true);
@@ -83,8 +94,6 @@ function App() {
   useEffect(() => {
     setTimer(endTime - startTime);
   }, [endTime]);
-
-  console.log(timer);
 
   useEffect(() => {
     if (timer < 10000) {
@@ -98,12 +107,17 @@ function App() {
     } else {
       setScore("Cubie Newbie");
     }
+    setBestScore([...bestScore, { id: nanoid(), time: timer }]);
   }, [timer]);
 
-  function msToTime() {
-    let seconds = Math.floor((timer / 1000) % 60);
-    let minutes = Math.floor((timer / (1000 * 60)) % 60);
-    let hours = Math.floor((timer / (1000 * 60 * 60)) % 24);
+  useEffect(() => {
+    localStorage.setItem("bestTime", JSON.stringify(bestScore));
+  }, [bestScore]);
+
+  function msToTime(x) {
+    let seconds = Math.floor((x / 1000) % 60);
+    let minutes = Math.floor((x / (1000 * 60)) % 60);
+    let hours = Math.floor((x / (1000 * 60 * 60)) % 24);
 
     hours = hours < 10 ? "0" + hours : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -112,11 +126,21 @@ function App() {
     return hours + ":" + minutes + ":" + seconds;
   }
 
+  function getTheBestTime() {
+    const theBestTime = bestScore
+      .sort((a, b) => a.time - b.time)
+      .filter((record) => record.time !== 0)[0]?.time;
+    return msToTime(theBestTime);
+  }
+
   return (
     <>
-      {tenzies && <Confetti />}
+      {getTheBestTime() === msToTime(timer) && tenzies && <Confetti />}
       <main className="section">
         <div className="game-section">
+          {bestScore.length > 1 && (
+            <h2>The Best Time Score: {getTheBestTime()}</h2>
+          )}
           <img className="tenzi-img" src={image} alt="Tenzi game image" />
           {!tenzies && (
             <h4 className="instructions">
@@ -175,7 +199,16 @@ function App() {
             <div className="score">
               <h3>Your score:</h3>
               <p>Number of rolls: {countRoll}</p>
-              <p>Time to win: {msToTime()}</p>
+              <p
+                className={`${msToTime(timer) === getTheBestTime() && "broke"}`}
+              >
+                {`${
+                  msToTime(timer) === getTheBestTime()
+                    ? "You broke the record :"
+                    : "Your time :"
+                }`}
+                {msToTime(timer)}
+              </p>
               <h3>You are: {score}</h3>
             </div>
           )}
